@@ -167,6 +167,12 @@ const DOM = {
   inputNukeConfirm: document.getElementById('input-nuke-confirm'),
   nukeTotalFreedVal: document.getElementById('nuke-total-freed-val'),
 
+  // Storage Guide Modal
+  btnStorageGuide: document.getElementById('btn-storage-guide'),
+  modalStorageGuide: document.getElementById('modal-storage-guide'),
+  btnCloseStorageGuide: document.getElementById('btn-close-storage-guide'),
+  btnOkStorageGuide: document.getElementById('btn-ok-storage-guide'),
+
   // Toast
   toastContainer: document.getElementById('toast-container')
 };
@@ -411,6 +417,23 @@ function setupEventListeners() {
   }
   if (DOM.btnExecuteNuke) {
     DOM.btnExecuteNuke.addEventListener('click', executeDriveNuke);
+  }
+
+  // Storage Breakdown Guide Modal
+  if (DOM.btnStorageGuide && DOM.modalStorageGuide) {
+    DOM.btnStorageGuide.addEventListener('click', () => {
+      DOM.modalStorageGuide.classList.remove('hidden');
+    });
+  }
+  if (DOM.btnCloseStorageGuide && DOM.modalStorageGuide) {
+    DOM.btnCloseStorageGuide.addEventListener('click', () => {
+      DOM.modalStorageGuide.classList.add('hidden');
+    });
+  }
+  if (DOM.btnOkStorageGuide && DOM.modalStorageGuide) {
+    DOM.btnOkStorageGuide.addEventListener('click', () => {
+      DOM.modalStorageGuide.classList.add('hidden');
+    });
   }
 
   // Pagination

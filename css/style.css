@@ -1916,4 +1916,106 @@ body {
   box-shadow: 0 0 15px rgba(244, 63, 94, 0.4);
 }
 
+/* Storage Guide Modal & Link */
+.btn-quota-link {
+  background: transparent;
+  border: 1px dashed rgba(99, 102, 241, 0.4);
+  color: #a5b4fc;
+  font-size: 0.75rem;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-left: auto;
+  transition: all var(--transition-fast);
+}
+
+.btn-quota-link:hover {
+  background: rgba(99, 102, 241, 0.15);
+  border-color: #6366f1;
+  color: #fff;
+}
+
+.modal-storage-guide-card {
+  max-width: 620px;
+}
+
+.icon-info-blue {
+  background: rgba(6, 182, 212, 0.15);
+  color: #22d3ee;
+}
+
+.storage-guide-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  margin: 1rem 0;
+}
+
+.guide-service-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 1rem;
+}
+
+.guide-service-card.card-photos { border-left: 3px solid #f59e0b; }
+.guide-service-card.card-drive { border-left: 3px solid #06b6d4; }
+.guide-service-card.card-gmail { border-left: 3px solid #f43f5e; }
+
+.service-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.service-badge {
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.badge-photos { color: #fbbf24; }
+.badge-drive { color: #38bdf8; }
+.badge-gmail { color: #fda4af; }
+
+.service-desc {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+  margin-bottom: 0.4rem;
+}
+
+.service-tip {
+  font-size: 0.75rem;
+  color: #fde68a;
+  background: rgba(245, 158, 11, 0.08);
+  padding: 0.4rem 0.6rem;
+  border-radius: 4px;
+}
+
+.service-tip a {
+  color: #fbbf24;
+  text-decoration: underline;
+}
+
+.guide-bullets {
+  padding-left: 1.2rem;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  line-height: 1.55;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.guide-bullets strong {
+  color: #e2e8f0;
+}
+
+.guide-bullets a {
+  color: #38bdf8;
+  text-decoration: underline;
+}
+
+
 

@@ -198,6 +198,7 @@
             <span class="quota-sub-item"><span class="bullet bullet-drive"></span> Drive: <strong id="quota-drive-val">--</strong></span>
             <span class="quota-sub-item"><span class="bullet bullet-trash"></span> Thùng rác: <strong id="quota-trash-val">--</strong></span>
             <span class="quota-sub-item"><span class="bullet bullet-free"></span> Còn trống: <strong id="quota-free-val">--</strong></span>
+            <button id="btn-storage-guide" class="btn-quota-link" title="Giải thích chi tiết vì sao còn dung lượng Google One">💡 Vì sao còn dung lượng?</button>
           </div>
         </div>
 
@@ -531,6 +532,85 @@
       <div class="modal-footer">
         <button id="btn-test-demo-from-modal" class="btn btn-secondary">Chạy Thử Demo (Không cần Client ID)</button>
         <button id="btn-save-settings" class="btn btn-primary">Lưu Cấu Hình</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: Storage Breakdown & Explanation (Google One, Photos, Gmail) -->
+  <div id="modal-storage-guide" class="modal-overlay hidden">
+    <div class="modal-card modal-storage-guide-card glass-card">
+      <div class="modal-header">
+        <div class="modal-title-wrap">
+          <div class="modal-icon icon-info-blue">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="12" y1="16" x2="12" y2="12"></line>
+              <line x1="12" y1="8" x2="12.01" y2="8"></line>
+            </svg>
+          </div>
+          <div>
+            <h3>Giải Thích Phân Bổ Bộ Nhớ Google One</h3>
+            <p class="tagline">Vì sao đã dọn Drive nhưng bộ nhớ Google One vẫn còn dung lượng?</p>
+          </div>
+        </div>
+        <button class="modal-close" id="btn-close-storage-guide">&times;</button>
+      </div>
+
+      <div class="modal-body">
+        <p class="modal-desc">
+          Tài khoản Google có <strong>15 GB dùng chung</strong> cho 3 dịch vụ hoàn toàn riêng biệt. Khi dọn Google Drive, chỉ có phần của Drive được giải phóng:
+        </p>
+
+        <!-- 3 Service Breakdown Cards -->
+        <div class="storage-guide-cards">
+          <!-- Card 1: Google Photos -->
+          <div class="guide-service-card card-photos">
+            <div class="service-head">
+              <span class="service-badge badge-photos">🖼️ Google Photos (~2,55 GB)</span>
+              <a href="https://photos.google.com/quotamanagement" target="_blank" rel="noopener" class="btn btn-sm btn-secondary">Dọn Photos ↗</a>
+            </div>
+            <p class="service-desc">
+              Ảnh và video sao lưu từ điện thoại của bạn. <strong>Google Photos lưu độc lập và KHÔNG nằm trong Google Drive</strong>.
+            </p>
+            <div class="service-tip">
+              💡 <strong>Cách xử lý:</strong> Mở <a href="https://photos.google.com/quotamanagement" target="_blank" rel="noopener">Trình dọn dẹp Google Photos</a> để xóa ảnh lớn, ảnh mờ hoặc video cũ.
+            </div>
+          </div>
+
+          <!-- Card 2: Google Drive -->
+          <div class="guide-service-card card-drive">
+            <div class="service-head">
+              <span class="service-badge badge-drive">📁 Google Drive (~2,61 GB)</span>
+              <a href="https://drive.google.com/drive/backups" target="_blank" rel="noopener" class="btn btn-sm btn-secondary">Xem Bản Sao Lưu ↗</a>
+            </div>
+            <p class="service-desc">
+              Sau khi dọn sạch file trên Drive, dung lượng Drive vẫn có thể hiển thị còn 2.61 GB vì 3 nguyên nhân:
+            </p>
+            <ul class="guide-bullets">
+              <li><strong>📱 Bản sao lưu thiết bị & WhatsApp:</strong> Tin nhắn WhatsApp, dữ liệu Android sao lưu vào phân vùng ẩn <em>Backups</em> của Drive. Bấm nút <em>Xem Bản Sao Lưu</em> ở trên để xóa nếu không cần.</li>
+              <li><strong>⏱️ Độ trễ cập nhật của Google One:</strong> Khi xóa lượng lớn dữ liệu, Google One mất từ <strong>vài giờ đến 24 giờ</strong> để máy chủ cập nhật và giảm số đo trên biểu đồ.</li>
+              <li><strong>🔍 Tệp mồ côi (is:unorganized):</strong> <a href="https://drive.google.com/drive/quota" target="_blank" rel="noopener">Kiểm tra trực tiếp danh sách tệp còn lưu trên Drive ↗</a></li>
+            </ul>
+          </div>
+
+          <!-- Card 3: Gmail -->
+          <div class="guide-service-card card-gmail">
+            <div class="service-head">
+              <span class="service-badge badge-gmail">✉️ Gmail (~217 MB)</span>
+              <a href="https://mail.google.com/mail/u/0/#search/has%3Aattachment+larger%3A10M" target="_blank" rel="noopener" class="btn btn-sm btn-secondary">Tìm Thư > 10MB ↗</a>
+            </div>
+            <p class="service-desc">
+              Email có tệp đính kèm lớn (tài liệu, file scan, video gửi qua thư) nằm trong hộp thư Gmail.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <a href="https://one.google.com/storage/management" target="_blank" rel="noopener" class="btn btn-primary">
+          <span>Mở Trình Quản Lý Bộ Nhớ Google One ↗</span>
+        </a>
+        <button id="btn-ok-storage-guide" class="btn btn-secondary">Đã Hiểu</button>
       </div>
     </div>
   </div>
